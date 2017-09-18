@@ -13,3 +13,21 @@ a {
 h1 {
   color: white;
 }
+
+p {
+  color: white;
+  font-size: 3em;
+}
+ ul {
+   color: white;
+ }
+
+#createSnippet {
+  width: 160px;
+  display: flex;
+}
+
+input {
+  text-align: left;
+  margin: 5px;
+}

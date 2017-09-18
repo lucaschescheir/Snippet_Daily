@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title></title>
-    <link href="style.css" rel="stylesheet">
-  </head>
-  <body>
-<h1>Snippet Collection of Collections </h1>
+
+<head>
+  <title></title>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Snippet Collection of Collections </h1>
+
   <section id="snippetList">
     <h2>Your Snippets</h2>
-  <ul>
-  {{ #snippetlist }}
-  <li> <a href="/details/{{ _id }}"> {{ title }}</a> </li>
-  {{ /snippetlist }}
-</ul>
-</section>
-<section id="createSnippet">
-  <h2>Create Snippet</h2>
-  <form method="post" action="/create">
-    <input type="text" name="title" placeholder="Title of snippet">
-    <input type="textarea" name="body" placeholder="snippet body">
-    <input type="textarea" name="notes" placeholder="notes">
-    <input type="text" name="language" placeholder="language">
-    <input type="text" name="tags" placeholder="tags">
-    <input type="submit" value="Create">
-  </form>
-  <section id="searchSnippet">
-    <h2>Search Snippet</h2>
-    <form method="post" action="/searchSnippet">
-      <input type="text" name="search" placeholder="search snippets">
-      <select name="searchFilter">
-        <option value="title">title</option>
+
+    <ul>
+      {{ #snippetlist }}
+      <li> <a href="/details/{{ _id }}"> {{ title }}</a> </li>
+      {{ /snippetlist }}
+    </ul>
+  </section>
+<h2>Create Snippet</h2>
+  <section id="createSnippet">
+
+    <form method="post" action="/create">
+      <input type="text" name="title" placeholder="Title of snippet">
+      <textarea name="body" cols="18" rows="3" placeholder="snippet"></textarea>
+      <input type="text" name="notes" placeholder="notes">
+      <input type="text" name="language" placeholder="language">
+      <input type="text" name="tags" placeholder="tags">
+      <input type="submit" value="Create">
+    </form>
+  </section>
+
+    <section id="searchSnippet">
+      <h2>Search Snippet</h2>
+      <form method="post" action="/searchSnippet">
+        <input type="text" name="search" placeholder="search snippets">
+
+        <select name="searchFilter">
+          <option value="title">title</option>
           <option value="language">language</option>
-            <option value="tags">tags</option>
-          </select>
-          <input type="submit" value="search">
-        </form>
-        {{ #searchResults}}
-        <ul>
-        <li>{{ title }}</li>
-        {{ /searchResults}}
+          <option value="tags">tags</option>
+        </select>
+        <input type="submit" value="search">
+      </form>
+
+
+      <ul>
+        {{ #searchResults }}
+        <li>Title: {{ title }} </li>
+
+        {{ /searchResults }}
+      </ul>
 </body>
+
 </html>
